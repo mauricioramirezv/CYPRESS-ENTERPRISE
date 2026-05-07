@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2026-05-07T02:53:33.693Z",
+    "end": "2026-05-07T02:53:34.063Z",
+    "duration": 370,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5c68f6eb-d4e8-4d99-86d4-ed3382a700ff",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\users-api.cy.js",
+      "file": "cypress\\e2e\\api\\users-api.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3959ab2e-c733-405e-8470-7cc880496f1d",
+          "title": "API Testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET users",
+              "fullTitle": "API Testing GET users",
+              "timedOut": null,
+              "duration": 242,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('https://jsonplaceholder.typicode.com/users').then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.length).to.be.greaterThan(0);\n});",
+              "err": {},
+              "uuid": "e876141d-0ff5-4d60-8924-7762e4e29172",
+              "parentUUID": "3959ab2e-c733-405e-8470-7cc880496f1d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST user",
+              "fullTitle": "API Testing POST user",
+              "timedOut": null,
+              "duration": 96,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://jsonplaceholder.typicode.com/users',\n  body: {\n    name: 'Mauricio',\n    email: 'mauricio@test.com'\n  }\n}).then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body.name).to.eq('Mauricio');\n});",
+              "err": {},
+              "uuid": "be3d29af-17ed-4593-8285-c78e62e50ba7",
+              "parentUUID": "3959ab2e-c733-405e-8470-7cc880496f1d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e876141d-0ff5-4d60-8924-7762e4e29172",
+            "be3d29af-17ed-4593-8285-c78e62e50ba7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 338,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochawesome-report",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
